@@ -1,4 +1,4 @@
-// 210 - Lab 14 - Leah Balakrishnan
+// 210 - Lab 16 - Leah Balakrishnan
 #include <iostream>
 
 using namespace std;
@@ -10,8 +10,20 @@ private:
     int blue;
 
 public:
-    // Constructor for Color
-    Color(int r = 0, int g = 0, int b = 0) : red(r), green(g), blue(b) {}
+    // NEW Default Constructor
+    Color() : red(0), green(0), blue(0) {
+        cout << "Called Default Constructor" << endl;
+    }
+    
+    // NEW Parameter Constructor
+    Color(int r, int g, int b) : red(r), green(g), blue(b) {
+        cout << "Called Parameter Constructor" << endl;
+    }
+    
+    // NEW Partial Constructor
+    Color(int r) : red(r), green(0), blue(0) {
+        cout << "Called Partial Constructor" << endl;
+    }
     
     // Setters
     void setRed(int r) {
@@ -46,8 +58,8 @@ public:
 };
 
 int main() {
-    // Now we create objects of Color
-    Color num1;
+    // This is where we create multiple objects using multiple constructor types
+    Color color1; // Default Constructor
     Color num2(255, 0, 0); // For red
     Color num3(0, 255, 0); // For green
     Color num4(0, 0, 255); // For blue
