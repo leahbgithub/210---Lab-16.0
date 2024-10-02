@@ -20,7 +20,7 @@ public:
         cout << "Called Parameter Constructor" << endl;
     }
     
-    // NEW Partial Constructor
+    // NEW Partial Constructor with only red while green/blue are 0
     Color(int r) : red(r), green(0), blue(0) {
         cout << "Called Partial Constructor" << endl;
     }
@@ -60,21 +60,23 @@ public:
 int main() {
     // This is where we create multiple objects using multiple constructor types
     Color color1; // Default Constructor
-    Color num2(255, 0, 0); // For red
-    Color num3(0, 255, 0); // For green
-    Color num4(0, 0, 255); // For blue
+    Color color2(255, 0, 0); // RED Parameter Constructor
+    Color color3(0, 255, 0); // Green Parameter Constructor
+    Color color4(0, 0, 255); // Blue Parameter Constructor
+    Color color5(128); // Partial Constructor where red is 128 and green/blue are 0
     
-    // Next, we have to populate num1, while using the setters from the above part
-    num1.setRed(128);
-    num1.setGreen(128);
-    num1.setBlue(128);
+    // Color1 is populated while using the setters from above
+    color1.setRed(64);
+    color1.setGreen(64);
+    color1.setBlue(64);
     
-    // Lastly we must present the objects of Color with the print statement in line 42
+    // Lastly we must display the objects of Color
     cout << "***** Objects for Color *****" << endl;
-    num1.print();
-    num2.print();
-    num3.print();
-    num4.print();
+    color1.print();
+    color2.print();
+    color3.print();
+    color4.print();
+    color5.print();
     
     return 0;
 }
